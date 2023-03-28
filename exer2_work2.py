@@ -6,6 +6,11 @@ datas = "s88,39,33es12,33,45es33,32s13,77,45es33,55,66e"
 #33,55,66
 found_s_idx = 0
 found_e_idx = 0
+
+listtemp = []
+listspd = []
+listweg = []
+
 while True:    
     s_idx = datas.index("s", found_s_idx)
     s_second_idx = datas.find("s", s_idx + 1)    
@@ -17,7 +22,12 @@ while True:
         # 비정상
         found_s_idx = s_second_idx
     else:
-        print(datas[s_idx+1:e_idx]) # 정상 
+        print(datas[s_idx+1:e_idx]) # 정상
+        rawdata = datas[s_idx+1:e_idx]    #"abcde" [1:3] -> "bc"
+        rawlist = rawdata.split(",") #"33,44,55" # -> ["33", "44", "55"]
+        listtemp.append(int(rawlist[0]))
+        listspd.append(int(rawlist[1]))
+        listweg.append(int(rawlist[2]))
         found_s_idx = s_idx + 1
         found_e_idx = e_idx + 1
     
@@ -26,10 +36,14 @@ while True:
 
 print("완료")
 
+print(listtemp, sum(listtemp), len(listtemp))
+print(listspd, sum(listspd), len(listspd))
+print(listweg, sum(listweg), len(listweg))
 
 
+disp_text = f"평균값: 온도: {sum(listtemp) / len(listtemp)} 속도: {int(sum(listspd) / len(listspd))} 중량: {sum(listweg) / len(listweg)}"
 
-
+print(disp_text)
 
 
 #평균값: 온도: 36.5 속도: 51.0 중량: 47.25
