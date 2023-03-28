@@ -1,4 +1,8 @@
-datas = "s88,39,33es12,33,45es33,32s13,77,45es33,55,66e"
+fobj = open("data.txt", "r")
+readfile = fobj.read()
+print(readfile)
+print("파일 읽기완료")
+datas = readfile
 #88,39,33
 #12,33,45
 # 33,32 에러
@@ -44,7 +48,3 @@ print(listweg, sum(listweg), len(listweg))
 disp_text = f"평균값: 온도: {sum(listtemp) / len(listtemp)} 속도: {int(sum(listspd) / len(listspd))} 중량: {sum(listweg) / len(listweg)}"
 
 print(disp_text)
-
-
-#평균값: 온도: 36.5 속도: 51.0 중량: 47.25
-
