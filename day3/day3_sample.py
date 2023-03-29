@@ -4,7 +4,8 @@ scores = [90, 80, 95, 100]
 # 이 코드가 아래 한줄로 표현됨 
 score_dict = dict()
 for key, value in zip(subjects, scores):
-    score_dict[key] = value
+    #score_dict[key] = value
+    score_dict.setdefault(key, value)
 print(score_dict)
 
 score_dict = {key:value for key,value in zip(subjects, scores)}
