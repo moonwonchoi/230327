@@ -8,8 +8,24 @@ def ShowMenu():
 ##         print("#", i +1, ".", menu[i], "\t가격 : ", price[i])
 ##     print()
      
-def BuyItem(num):    
-    pass 
+def BuyItem(num):
+    global money
+    global selllist
+    if money < price[num-1]:
+        print("잔액이 부족합니다")
+    else:
+        print(menu[num-1], "구입완료")
+        money = money - price[num-1]
+
+        if menu[num-1] in selllist.keys():
+            selllist[menu[num-1]] = selllist[menu[num-1]] + 1
+        else:
+            selllist[menu[num-1]] = 1
+
+    print("잔액: ", money) 
+    print("selllist: ", selllist)        
+        
+     
 def ShowSellList():
     pass
     
@@ -20,7 +36,7 @@ menu = ("콜라", "사이다", "생수", "커피")
 price = (1200, 1000, 700, 1500)
 money = 0
 money = int( input("돈을 투입하세요 : ") )
-selllist = {}
+selllist = dict()
 
 while True:
     ShowMenu()
@@ -29,6 +45,7 @@ while True:
         break
     elif len(menu) >= sel:
         #메뉴 정상 선택
+        BuyItem(sel) #1~4
         print("메뉴정상 선택")
     elif sel == 99:
         print("관리자메뉴")
