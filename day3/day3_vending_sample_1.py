@@ -44,10 +44,15 @@ def BuyItem_return(num, selllist, remainmoney):
         
      
 def ShowSellList():
-    pass
+    print("판매량: ", selllist)
+    
     
 def CheckPassword():
-    pass
+    pw = input("비밀번호를 입력하세요:")
+    if pw =="1234":
+        return True
+
+    return False
  
 menu = ("콜라", "사이다", "생수", "커피")
 price = (1200, 1000, 700, 1500)
@@ -67,6 +72,9 @@ while True:
         print("메뉴정상 선택")
     elif sel == 99:
         print("관리자메뉴")
+        if CheckPassword() == True:
+            ShowSellList()
+        
     else:
         #메뉴 비정상 선택
         print("메뉴 비정상 선택")        
