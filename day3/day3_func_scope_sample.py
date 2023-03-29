@@ -17,7 +17,7 @@ def func_ex():
 #LGB
 #Local Global Builtin
 #LEGB
-#Local nonlocal Global Builin
+#Local nonlocal(enclosed) Global Builin
 def func_ex():
     func_outside_v = 10
     def func_inner_1():
