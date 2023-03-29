@@ -23,7 +23,24 @@ def BuyItem(num):
             selllist[menu[num-1]] = 1
 
     print("잔액: ", money) 
-    print("selllist: ", selllist)        
+    print("selllist: ", selllist)
+
+def BuyItem_return(num, selllist):
+    balance = money
+    if money < price[num-1]:
+        print("잔액이 부족합니다")
+    else:
+        print(menu[num-1], "구입완료")
+        balance = balance - price[num-1]
+
+        if menu[num-1] in selllist.keys():
+            selllist[menu[num-1]] = selllist[menu[num-1]] + 1
+        else:
+            selllist[menu[num-1]] = 1
+
+    print("잔액: ", balance) 
+    print("selllist: ", selllist)
+    return balance
         
      
 def ShowSellList():
@@ -46,6 +63,7 @@ while True:
     elif len(menu) >= sel:
         #메뉴 정상 선택
         BuyItem(sel) #1~4
+        #money = BuyItem_return(sel, selllist)
         print("메뉴정상 선택")
     elif sel == 99:
         print("관리자메뉴")
