@@ -100,7 +100,213 @@ print(v_space_str.rstrip()) #끝 공백 제거
 #문자열 나누기
 print(v_space_str.split(" ")) #' ' 일반적으로 앞뒤 공백 제거 후 split 
 
-print("----- 문자열 사업 등 제어2 예시 끝 -----")
+print("----- 문자열 작업 등 제어2 예시 끝 -----")
+
+# 리스트 자료구조 제어
+a = [1,2,3,4,5,6,7]
+print(a)
+a[2] = 10
+print(a)
+
+del a[1]
+print(a)
+del a[3:] # idx 3 끝까지 삭제
+print(a)
+a.append(999)
+#a.append([111,222,33])
+print(a)
+a.extend([111,222,333,111])
+print(a)
+a.sort() # sorted() 정렬한 새로운 리스트 생성
+print(a)
+
+print(a.reverse() or a)
+print(a.insert(0, 10) or a)
+print(a.remove(999) or a) #999값을 찾아서 삭제
+print(a.pop() and a)    # 끝위치 값을 꺼내고 삭제
+print(a.pop(0) and a)   # 0위치 값을 꺼내고 삭제 
+
+print(a.count(111))     # 111과 같은 값을 카운팅
+print(a * 3)
+
+print("----리스트 예시 끝----")
+
+
+# 튜플 자료구조 제어
+a = (1,2,3,4,5,6,7)
+print(a)
+#a[2] = 10
+#print(a)
+
+#del a[1]
+#print(a)
+#del a[3:] # idx 3 끝까지 삭제
+#print(a)
+#a.append(999)
+#a.append([111,222,33])
+#print(a)
+#a.extend([111,222,333,111])
+#print(a)
+#a.sort() # sorted() 정렬한 새로운 리스트 생성
+#print(a)
+
+#print(a.reverse() or a)
+#print(a.insert(0, 10) or a)
+#print(a.remove(999) or a) #999값을 찾아서 삭제
+#print(a.pop() and a)    # 끝위치 값을 꺼내고 삭제
+#print(a.pop(0) and a)   # 0위치 값을 꺼내고 삭제 
+
+print(a.count(111))     # 111과 같은 값을 카운팅
+print(a * 3)
+
+print("----튜플 예시 끝----")
+
+#사전 자료구조
+dict1 = {"name":"hong", "age":20, "email":["abc@naver.com", "sec@naver.com"],
+         34:"numvalue", (1,2) : "tuplevalue", 1.2 : "float_value"}
+dict2 = dict1 #참조복사
+print(dict1)
+
+dict1 = {"new" : 999 } # 새로운 딕셔너리 만들어서 할당
+dict1["new1"] = 998
+dict1[55] = (999, 222)
+print(dict1)
+
+del dict1["new"]
+del dict1[55]
+print("-------")
+
+dict1 = dict2 #참조복사
+
+#key 값을 순회 추출
+for x in dict1.keys(): #dict1만 입력하는 것과 같음
+    print(x) 
+
+#values 값을 순회 추출
+for x in dict1.values():
+    print(x)
+
+#(key, value)
+for x in dict1.items():
+    print(x)
+
+#zip, enumerate
+
+#값을 접근하는 방법
+print(dict1["name"])  # dict1.setdefault(키이름, 값) => 만일 기존 키가 있을경우 기존 값 리턴 
+print(dict1.get("name1"))  # 해당 key가 없을 경우 예외처리 하지 않고 None 리턴
+print(dict1.get("name1", "empty")) # key가 없을 경우 기본값 리턴
+
+#deepcopy/swallow 복사
+dict3 = dict2.copy() #swallow
+
+import copy
+dict4 = copy.deepcopy(dict2) #deepcopy
+
+dict2["email"][0] = "new@naver.com"
+
+print("-----copy----")
+print(dict2)
+print("-----dict3----")
+print(dict3)
+print("-----dict4 deep----")
+print(dict4)
+
+print(dict2.clear() or dict2)
+
+
+print("-----사전 사용 예시----")
+
+
+
+#set
+set1 = {1,2,3,3,4}
+set2 = set((3,4,5,6))
+print(set1)
+print(set2)
+
+print(set1 & set2) #교집합
+print(set1.intersection(set2))
+
+print(set1 | set2) #합집합
+print(set1.union(set2))
+
+print(set1 - set2) #차집합
+print(set1.difference(set2))
+
+print(set1 ^ set2) #합집합 - 교집합
+
+print(set1.add(100) or set1)
+print(set1.update([11,22,33]) or set1)
+
+print(set1.remove(11) or set1)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
