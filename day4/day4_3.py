@@ -3,6 +3,9 @@ class Student:
         print("new", id(cls))
         return object.__new__(cls)
 
+    def __del__(self):
+        print("del", id(self))
+              
     #인스턴스 메소드
     def __init__(self, name):     #객체가 생성되고 처음으로 자동호출되는 초기화 함수
         self.student_name = name
