@@ -22,7 +22,7 @@ class Member:
         return f"이름은 {self.name}, 반은 {self.num}"
 
     @classmethod
-    def getCount(cls):
+    def getCount(cls): #Member, Student
         return cls.member_count
 
     @classmethod
